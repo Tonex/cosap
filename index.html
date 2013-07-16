@@ -23,7 +23,7 @@
 
 	<div data-role="content" id="signup">
 	
-	<div style="padding:1px;" id="error"> </div>
+	<div style="padding:1px;" id="error" > </div>
 	
 	
          <form action="" method="POST" data-transition="pop">
@@ -144,6 +144,12 @@ if(ajaxRequest.status == 200 && ajaxRequest.readyState == 4){
 //alert("congratulations!! You have su");
 
 document.getElementById("error").innerHTML = "Congratulations!! You Have Been Successfully Registered ";
+
+document.getElementById("firstname").value = "";
+document.getElementById("lastname").value = "";
+document.getElementById("email").value = "";
+document.getElementById("password").value = "";
+document.getElementById("phone").value = "";
 }
 
 }
