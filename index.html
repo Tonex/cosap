@@ -28,28 +28,28 @@
 		 
          <div data-role="fieldcontain">
                       <span> FULLNAME </span>
-                       <input type="text" name="firstname" id="firstname" data-mini="false"/>
+                       <input type="text" name="firstname" id="firstname" data-mini="false" style="border-radius:1px;"/>
            <p></p>
                  
                   <span> LASTNAME </span>
-                    <input type="text" id="lastname" name="lastname"/>
+                    <input type="text" id="lastname" name="lastname" style="border-radius:1px;"/>
                  <p></p>
 				 
 				 
                   <span> Email </span>
-                    <input type="email" id="email" name="email"/>
+                    <input type="email" id="email" name="email" style="border-radius:1px;"/>
 					<p></p>
 					
                   <span> PASSWORD </span>
-                    <input type="password" id="password" name="password"/>
+                    <input type="password" id="password" name="password" style="border-radius:1px;"/>
 					<p></p>
  	
 				
                   <span>PHONE # </span>
-                    <input type="tel" name="phone" id="phone"  placeholder="Ghana only"/>	
+                    <input type="tel" name="phone" id="phone"  placeholder="Ghana only" style="border-radius:1px;"/>	
 			<p></p>
                     
-<input type="button" name="signup" data-theme="a" value="Sign Up" onClick="registration();" data-transition="pop"/>
+<input type="button" name="signup" data-corners="false" data-theme="a" value="Sign Up" onClick="registration();" data-transition="pop" />
                 
 				</form>
                 </div>
@@ -120,7 +120,7 @@ ajaxRequest = new XMLHttpRequest();
 //ajaxRequest = open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email"&pass="+password+"&no="+phone);
 
 
-ajaxRequest.open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
 
 ajaxRequest.onreadystatechange = function(){
 
@@ -132,6 +132,7 @@ alert("congratulation");
 
 }
 
+document.getElementById("error").innerHTML = "Loading...Please Wait"
 
 ajaxRequest.send(null);
 
