@@ -7,14 +7,16 @@
 <meta name="description" content=""> 
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <link rel="apple-touch-icon" href="images/icon.png"/>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="css/themes/bluetheme.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
 </head>
 <body>
 
-<div data-role="page" data-theme="d">
+<div data-role="page" data-theme="a">
    
    <!-- beginning of header page  -->
-<div data-role="header" data-fullscreen="true" data-postion="fixed" data-theme="b">
+<div data-role="header" data-fullscreen="true" data-postion="fixed" >
 <h4>COSAPS APP</h4>
 </div>
 
@@ -28,7 +30,7 @@
 		 
          <div data-role="fieldcontain">
                       <span> FULLNAME </span>
-                       <input type="text" name="firstname" id="firstname" data-mini="false" style="border-radius:1px;"/>
+                       <input type="text" name="firstname" id="firstname" data-mini="false" style="border-radius:3bbbpx;"/>
            <p></p>
                  
                   <span> LASTNAME </span>
@@ -49,14 +51,26 @@
                     <input type="tel" name="phone" id="phone"  placeholder="Ghana only" style="border-radius:1px;"/>	
 			<p></p>
                     
-<input type="button" name="signup" data-corners="false" data-theme="a" value="Sign Up" onClick="registration();" data-transition="pop" />
+<input type="button" name="signup" data-inline="true" data-corners="false" data-theme="a" value="Sign Up" onClick="registration();" data-transition="pop" />
                 
 				</form>
                 </div>
 				
-		<a href="http://digijag.com/cosap/contact.html">Contact</a>
+
                 </div>   <!-- end of content div -->
-                
+
+
+<div data-role="footer" data-position="relative">  
+	<div data-role="navbar">			
+<ul>
+<li><a href="#" data-role="button" data-iconpos="top" data-icon="refresh" data-transition="slide">SIGNUP</a></li>  
+<li><a href="http://www.digijag.com/cosap/contact.html" data-iconpos="top" data-icon="forward" data-role="button" data-transition="slide">CONTACT</a></li>
+<li><a href="http://www.digijag.com/cosap/terms.html" data-role="button" data-iconpos="top" data-icon="info" data-transition="slide"> TERMS</a></li> 
+
+</ul>
+</div>  <!--  end of navbar -->
+
+</div>  <!-- end of footer -->                
 
 
                 
@@ -142,8 +156,9 @@ ajaxRequest.send(null);
 
 
 </script>		
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.3.0.js"></script>
 
 	
 
