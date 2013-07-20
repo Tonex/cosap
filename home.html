@@ -1,4 +1,99 @@
 <!DOCTYPE html>
 <html>
-<body>HELLO WOLRD</body>
+<head>
+<title>COSAPS SIGNUP</title>
+<meta charset="utf-8"/>
+<meta name="keywords" content="Cosaps, about Cosaps, Computer science android app">
+<meta name="description" content=""> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="apple-touch-icon" href="images/icon.png"/>
+    <link rel="stylesheet" href="css/themes/bluetheme.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
+<style type="text/css">
+
+.photoholder {
+	padding: 5px;
+	text-align: center;
+}
+.photoholder img {
+	height: 200px;
+	width: 140px;
+	padding: 4px;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+}
+
+</style>
+</head>
+<body>
+<div data-role="page" data-theme="d">
+
+
+   <!-- beginning of header page -->
+<div data-role="header" data-fullscreen="false" data-postion="fixed">
+
+
+
+<div data-role="navbar">
+<ul>
+<li><a href="" data-role="button" data-iconpos="top" data-icon="grid" data-transition="slide" onClick="makeRequest('profile.html','content_area');"/>MEMBERS</a></li>  
+<li><a href="" data-iconpos="top" data-icon="star" data-role="button" data-transition="slide" onClick="makeRequest('profile.html','content_area');">PROFILE</a></li>
+<li><a href="http://www.digijag.com/cosap/terms.html" data-role="button" data-iconpos="top" data-icon="info" data-transition="slide">WATS UP</a></li> 
+</ul>
+</div></div>
+
+<div data-role="content" id="content_area">
+
+
+
+<p style="color:#1D721D; text-align:center; padding:0px;">ON UPDATE</p>
+
+
+<ul data-role="listview">
+
+											
+<li>
+<span style="color:color:#5F6D5F; font-size:14px"> hello world </span> 
+
+
+</li>										
+
+</ul>
+
+</div>   <!-- end of content div -->
+
+
+						
+
+</div>
+
+
+
+<script>
+function makeRequest(serverPage,divID){
+
+document.getElementById("content_area").innerHTML = "<center><b>Loading... Please Wait</b></center>"
+
+var content_area = document.getElementById(divID);
+
+xmlhttp = new XMLHttpRequest();
+
+xmlhttp.open("POST",serverPage);
+
+xmlhttp.onreadystatechange = function(){
+
+if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+
+content_area.innerHTML = xmlhttp.responseText;
+
+}
+
+}
+xmlhttp.send(null);
+}
+
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.3.0.js"></script>
+</body>
 </html>

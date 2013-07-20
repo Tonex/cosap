@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPLOAD PIC</title>
+    <meta charset="utf-8"/>
+<meta name="keywords" content="Cosaps, about Cosaps, Computer science android app">
+<meta name="description" content=""> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="css/themes/bluetheme.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
+</head>
+<body>
+
+
+<div data-role="page" data-theme="a">
+
+
+   <!-- beginning of header page -->
+   <!-- beginning of header page  -->
+<div data-role="header" data-fullscreen="true" data-postion="fixed" >
+<h4>COSAPS APP</h4>
+</div>
+
+<div data-role="content">
+
+<div id="success"></div>
+
+							<h4> ADD YOUR PIC </h4><br/>
+							
+							<form action="" method="POST" enctype="multipart/form-data">
+							Choose file <input type="file" id="image"> <br/><br/>
+				<input type="button" name="signup" data-inline="false" data-corners="true" data-theme="a" value="Upload" onClick="uploadPic();" data-transition="pop" />
+        	</form>
+</div>  <!-- end of content -->
+
+
+</div> <!-- end of page -->
+
+
+
+
+<script>
+
+var userid = getUrlVars()["userid"];  //method call to grab userid in url
+
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		vars[key] = value;
+	});
+	return vars;
+}
+
+</script>
+
+
+
+<script>
+
+
+
+function uploadPic(){
+
+var image = document.getElementById("image").value;
+//error checking
+
+if(image == ""){
+alert("Please Upload a pic!! Even if it is an Ugly one");
+}
+
+else{
+
+ajaxRequest = new XMLHttpRequest();
+
+//ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+
+ajaxRequest.open("GET","scripts/process_upload.php?userid"+userid+"&image="+image,true);
+
+ajaxRequest.onreadystatechange = function(){
+
+if(ajaxRequest.status == 200 && ajaxRequest.readyState == 4){
+
+//var id = JSON.parse(ajaxRequest.responseText);
+
+//alert("CONGRATULATIONS!! YOU HAVE SUCCESSFULLY REGISTERED");
+//document.getElementById("success").innerHTML = "";
+
+}
+
+}
+
+//document.getElementById("success").innerHTML = "Uploading Pic Please Wait....";
+document.getElementById("success").innerHTML = image;
+
+
+ajaxRequest.send(null);
+
+
+
+}}
+
+
+</script>		
+
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.3.0.js"></script>
+</body>
+</html>

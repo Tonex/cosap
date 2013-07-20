@@ -7,7 +7,6 @@
 <meta name="description" content=""> 
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <link rel="apple-touch-icon" href="images/icon.png"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" href="css/themes/bluetheme.css" />
 	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
 </head>
@@ -23,8 +22,9 @@
 
 	<div data-role="content" id="signup">
 	
-	<div style="padding:1px;" id="error" > </div>
+	<div style="padding:1px;" id="error" style="color:blue" > </div>
 	
+	<center><p style="text-align:center; color:green;">I WAZ JUST FOOLIING AROUND AND LOOK WHAT I CREATED IN LESS THAN 12HRS</p></center>
 	
          <form action="" method="POST" data-transition="pop">
 		 
@@ -134,16 +134,25 @@ ajaxRequest = new XMLHttpRequest();
 //ajaxRequest = open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email"&pass="+password+"&no="+phone);
 
 
-ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+//ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+
+
+ajaxRequest.open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
 
 ajaxRequest.onreadystatechange = function(){
 
 if(ajaxRequest.status == 200 && ajaxRequest.readyState == 4){
 
-//location.href="home.html";
+var id = JSON.parse(ajaxRequest.responseText);
+
+var lastid = id.users.lastid;
+
+
+location.href="upload.html?userid="+lastid;
 //alert("congratulations!! You have su");
 
-document.getElementById("error").innerHTML = "Congratulations!! You Have Been Successfully Registered ";
+//document.getElementById("error").innerHTML = "<img src='images/tick.gif'> Congratulations!! You Have Been Successfully Registered ";
+//document.getElementById("iddiv").innerHTML = lastid;
 
 document.getElementById("firstname").value = "";
 document.getElementById("lastname").value = "";

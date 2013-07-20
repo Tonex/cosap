@@ -1,10 +1,15 @@
 <?php
+//$host="localhost";
+//$user="digijagc_cosaps";
+//$password="anthony1234!@#$";
+
 $host="localhost";
-$user="digijagc_cosaps";
-$password="anthony1234!@#$";
+$user="root";
+$password="";
+
 
 @$connect=mysql_connect($host,$user,$password) or die(mysql_error());
-@$selectDB=mysql_select_db("digijagc_cosaps") or die(mysql_error());
+@$selectDB=mysql_select_db("cosaps") or die(mysql_error());
 
 
 //if(isset($_POST["fname"],$_POST['lname'],$_POST['mail'],$_POST['pass'],$_POST['no'])){
@@ -30,6 +35,33 @@ $query = "INSERT INTO cosaps_basic_info
 $r = mysql_query($query) or die(mysql_error());
 
 
+$lastid=mysql_insert_id() or die(mysql_error());
+
+
+
+//grab last id inserted
+
+$jsonData ='{ "users": 
+
+{
+
+"lastid":'.$lastid.'
+
+}';
+
+
+$jsonData .= '}';
+
+
+echo $jsonData;
+
+
 //}
+
+
+
+
+
+
    
 ?>
