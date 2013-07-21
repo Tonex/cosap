@@ -9,6 +9,7 @@
 <link rel="apple-touch-icon" href="images/icon.png"/>
     <link rel="stylesheet" href="css/themes/bluetheme.css" />
 	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
+	
 <style type="text/css">
 
 .photoholder {
@@ -38,27 +39,16 @@
 <ul>
 <li><a href="" data-role="button" data-iconpos="top" data-icon="grid" data-transition="slide" onClick="makeRequest('profile.html','content_area');"/>MEMBERS</a></li>  
 <li><a href="" data-iconpos="top" data-icon="star" data-role="button" data-transition="slide" onClick="makeRequest('profile.html','content_area');">PROFILE</a></li>
-<li><a href="http://www.digijag.com/cosap/terms.html" data-role="button" data-iconpos="top" data-icon="info" data-transition="slide">WATS UP</a></li> 
+<li><a href="" data-role="button" data-iconpos="top" data-icon="info" data-transition="slide" onClick="makeRequest('chat.html','content_area');">WATS UP</a></li> 
 </ul>
 </div></div>
 
 <div data-role="content" id="content_area">
 
 
+ON UPDATE
 
-<p style="color:#1D721D; text-align:center; padding:0px;">ON UPDATE</p>
-
-
-<ul data-role="listview">
-
-											
-<li>
-<span style="color:color:#5F6D5F; font-size:14px"> hello world </span> 
-
-
-</li>										
-
-</ul>
+<script> makeRequest('profile.html','content_area') </script>
 
 </div>   <!-- end of content div -->
 
@@ -67,6 +57,10 @@
 
 </div>
 
+<script>
+
+window.onLoad = makeRequest("profile.html","content_area");
+</script>
 
 
 <script>
