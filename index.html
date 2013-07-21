@@ -134,10 +134,10 @@ ajaxRequest = new XMLHttpRequest();
 //ajaxRequest = open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email"&pass="+password+"&no="+phone);
 
 
-//ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+ajaxRequest.open("GET","http://digijag.com/cosap/scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
 
 
-ajaxRequest.open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
+//ajaxRequest.open("GET","scripts/process_registration.php?fname="+firstname+"&lname="+lastname+"&mail="+email+"&pass="+password+"&no="+phone,true);
 
 ajaxRequest.onreadystatechange = function(){
 
