@@ -34,6 +34,7 @@ $query = "INSERT INTO cosaps_basic_info
 
 $r = mysql_query($query) or die(mysql_error());
 
+/*
 
 $lastid=mysql_insert_id() or die(mysql_error());
 
@@ -58,6 +59,7 @@ echo $jsonData;
 
 //}
 
+*/
 
 
 
